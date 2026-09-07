@@ -4,6 +4,8 @@ Stream Maya Research speech in a Pipecat pipeline with one API key. The service 
 
 This is a **community-maintained integration by Maya Research**, the company providing the API. Pipecat does not maintain or validate this package. Built for and tested with **Pipecat 1.8.1**, pinned explicitly until additional versions are verified. Python 3.11 or newer.
 
+**Known provider limitation:** some Calyx/Amit HTTP outputs omitted a second sentence. A same-request byte comparison proved the omission was already present in the provider response. The default Native route passed the production pipeline checks. Review [the evidence and deployment limits](docs/validation.md) before selecting Calyx for a use case.
+
 ## Install
 
 ```bash

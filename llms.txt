@@ -41,3 +41,5 @@ No pitch, SSML, seed, manual region, word timestamps, or phoneme API is claimed.
 Observe ErrorFrame and on_pipeline_error, not only HTTP 200/end. Zero audio is failure.
 Support identifiers: WS session_id + context_id; HTTP last_request_id. Never log secrets.
 See README.md, docs/api-coverage.md and docs/validation.md for complete details and evidence.
+
+Known provider P1: intermittent Calyx/Amit HTTP second-sentence omission was proven in raw response bytes. Do not claim all voices/languages content-qualified from nonzero audio. Default Native pipeline was validated. See docs/validation.md.

@@ -1,0 +1,68 @@
+{
+  "started_at": "2026-09-07T10:13:22.218347+00:00",
+  "source": "actual Pipecat paced output transport writes",
+  "stt_model": "stt-rt-v5",
+  "results": [
+    {
+      "file": "service16k-token_sentences-c998576c-played.wav",
+      "finished": true,
+      "error": null,
+      "expected_text": "First, your order will arrive tomorrow morning. Second, please be ready at ten o'clock.",
+      "transcript": "First, your order will arrive tomorrow morning, second, please be ready at 10 o'clock.",
+      "label": "token_sentences",
+      "context_id": "c998576c-f169-4701-8268-8106a4801069",
+      "sample_rate": 16000
+    },
+    {
+      "file": "service16k-direct_speak-59ca28ff-played.wav",
+      "finished": true,
+      "error": null,
+      "expected_text": "Your order will arrive tomorrow morning",
+      "transcript": "Your order will arrive tomorrow morning.",
+      "label": "direct_speak",
+      "context_id": "59ca28ff-f6dd-45ab-bfda-601afc13dcdd",
+      "sample_rate": 16000
+    },
+    {
+      "file": "service16k-after_interrupt-99fef08b-played.wav",
+      "finished": true,
+      "error": null,
+      "expected_text": "The new response starts now.",
+      "transcript": "The new response starts now.",
+      "label": "after_interrupt",
+      "context_id": "99fef08b-7ee7-4357-8a67-a33ea3e51e70",
+      "sample_rate": 16000
+    },
+    {
+      "file": "service16k-native_updated_hi_speed-5c7f8007-played.wav",
+      "finished": true,
+      "error": null,
+      "expected_text": "नमस्ते, आपका दिन शुभ हो।",
+      "transcript": "नमस्ते, आपका दिन शुभ हो।",
+      "label": "native_updated_hi_speed",
+      "context_id": "5c7f8007-9e7b-4aa0-8640-c5b512341a1c",
+      "sample_rate": 16000
+    },
+    {
+      "file": "service16k-calyx_updated_auto-576074a0-played.wav",
+      "finished": true,
+      "error": null,
+      "expected_text": "नमस्ते, your order is ready.",
+      "transcript": "नमस्ते, your order is ready.",
+      "label": "calyx_updated_auto",
+      "context_id": "576074a0-cd71-4bb8-b55d-84b8d931b2a7",
+      "sample_rate": 16000
+    },
+    {
+      "file": "service8k-native_8k_full_tail-442add51-played.wav",
+      "finished": true,
+      "error": null,
+      "expected_text": "Your order will arrive tomorrow morning.",
+      "transcript": "Your order will arrive tomorrow morning.",
+      "label": "native_8k_full_tail",
+      "context_id": "442add51-3128-4d69-9b68-df882da296e2",
+      "sample_rate": 8000
+    }
+  ],
+  "completed_at": "2026-09-07T10:13:55.418177+00:00"
+}

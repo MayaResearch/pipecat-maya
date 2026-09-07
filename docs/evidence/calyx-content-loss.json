@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-09-07T10:15:23.829669+00:00",
+  "scope": "same HTTP response body versus MayaHttpTTSService emitted PCM, no resampling",
+  "max_requests": 6,
+  "harness_setup_requests": 1,
+  "harness_setup_note": "Initial per-instance method assignment hit StreamReader slots; corrected to a delegating content wrapper, leaving five requests within original six-request budget",
+  "max_stt_requests": 1,
+  "method": "ClientResponse.start wraps original iter_chunked, records and yields each chunk unchanged",
+  "provider_documentation": "https://www.mayaresearch.ai/llm.txt",
+  "stt_documentation": "https://soniox.com/docs/api-reference/stt/websocket-api",
+  "stt_model": "stt-rt-v5",
+  "results": [
+    {
+      "attempt": 1,
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "hi",
+      "expected_text": "नमस्ते। आप कैसे हैं?",
+      "status": 200,
+      "content_type": "audio/L16; rate=24000; channels=1",
+      "http_request_id": "3dcaaf8a-23c3-4f15-8401-dedd67f0b04d",
+      "raw_body_bytes": 24290,
+      "emitted_pcm_bytes": 24290,
+      "byte_exact_equal": true,
+      "raw_body_sha256": "f5c047cd474e43dad349ceb5d41271bfbd2f86fd8ccc8bb870cce31b24437b33",
+      "emitted_pcm_sha256": "f5c047cd474e43dad349ceb5d41271bfbd2f86fd8ccc8bb870cce31b24437b33",
+      "raw_chunk_sizes": [
+        4096,
+        1664,
+        4096,
+        4096,
+        4096,
+        3070,
+        1024,
+        2148
+      ],
+      "duration_s": 0.506,
+      "emitted_formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "errors": [],
+      "raw_pcm": "calyx-same-call-tee-hi.pcm",
+      "wav": "calyx-same-call-tee-hi.wav",
+      "stt": {
+        "finished": true,
+        "error": null,
+        "transcript": "नमस्ते।"
+      }
+    }
+  ],
+  "stopped_reason": "reproduced short audio with byte-exact raw-body/emitted-PCM equality",
+  "completed_at": "2026-09-07T10:15:27.516607+00:00"
+}

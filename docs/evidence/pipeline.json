@@ -1,0 +1,145 @@
+{
+  "started_at": "2026-09-07T10:12:42.169196+00:00",
+  "pipecat_version": "1.8.1",
+  "results": [
+    {
+      "test": "service16k",
+      "sample_rate": 16000,
+      "errors": [],
+      "contexts": [
+        {
+          "context_id": "c998576c-f169-4701-8268-8106a4801069",
+          "label": "token_sentences",
+          "service_audio_bytes": 182400,
+          "service_duration_seconds": 5.7,
+          "played_audio_bytes": 182400,
+          "played_duration_seconds": 5.7,
+          "service_starts": 1,
+          "service_stops": 1,
+          "playback_stops": 1,
+          "played_prefix_matches_service_pcm": true,
+          "tail_padding_only_silence": true,
+          "wav": "service16k-token_sentences-c998576c.wav",
+          "played_wav": "service16k-token_sentences-c998576c-played.wav"
+        },
+        {
+          "context_id": "59ca28ff-f6dd-45ab-bfda-601afc13dcdd",
+          "label": "direct_speak",
+          "service_audio_bytes": 72320,
+          "service_duration_seconds": 2.26,
+          "played_audio_bytes": 72320,
+          "played_duration_seconds": 2.26,
+          "service_starts": 1,
+          "service_stops": 1,
+          "playback_stops": 1,
+          "played_prefix_matches_service_pcm": true,
+          "tail_padding_only_silence": true,
+          "wav": "service16k-direct_speak-59ca28ff.wav",
+          "played_wav": "service16k-direct_speak-59ca28ff-played.wav"
+        },
+        {
+          "context_id": "2e8287fc-1e8a-4125-b145-f3db81b51b25",
+          "label": "interrupted",
+          "service_audio_bytes": 33276,
+          "service_duration_seconds": 1.039875,
+          "played_audio_bytes": 16000,
+          "played_duration_seconds": 0.5,
+          "service_starts": 1,
+          "service_stops": 0,
+          "playback_stops": 0,
+          "played_prefix_matches_service_pcm": true,
+          "tail_padding_only_silence": true,
+          "wav": "service16k-interrupted-2e8287fc.wav",
+          "played_wav": "service16k-interrupted-2e8287fc-played.wav"
+        },
+        {
+          "context_id": "99fef08b-7ee7-4357-8a67-a33ea3e51e70",
+          "label": "after_interrupt",
+          "service_audio_bytes": 64000,
+          "service_duration_seconds": 2.0,
+          "played_audio_bytes": 64000,
+          "played_duration_seconds": 2.0,
+          "service_starts": 1,
+          "service_stops": 1,
+          "playback_stops": 1,
+          "played_prefix_matches_service_pcm": true,
+          "tail_padding_only_silence": true,
+          "wav": "service16k-after_interrupt-99fef08b.wav",
+          "played_wav": "service16k-after_interrupt-99fef08b-played.wav"
+        },
+        {
+          "context_id": "5c7f8007-9e7b-4aa0-8640-c5b512341a1c",
+          "label": "native_updated_hi_speed",
+          "service_audio_bytes": 99840,
+          "service_duration_seconds": 3.12,
+          "played_audio_bytes": 99840,
+          "played_duration_seconds": 3.12,
+          "service_starts": 1,
+          "service_stops": 1,
+          "playback_stops": 1,
+          "played_prefix_matches_service_pcm": true,
+          "tail_padding_only_silence": true,
+          "wav": "service16k-native_updated_hi_speed-5c7f8007.wav",
+          "played_wav": "service16k-native_updated_hi_speed-5c7f8007-played.wav"
+        },
+        {
+          "context_id": "576074a0-cd71-4bb8-b55d-84b8d931b2a7",
+          "label": "calyx_updated_auto",
+          "service_audio_bytes": 80474,
+          "service_duration_seconds": 2.5148125,
+          "played_audio_bytes": 80640,
+          "played_duration_seconds": 2.52,
+          "service_starts": 1,
+          "service_stops": 1,
+          "playback_stops": 1,
+          "played_prefix_matches_service_pcm": true,
+          "tail_padding_only_silence": true,
+          "wav": "service16k-calyx_updated_auto-576074a0.wav",
+          "played_wav": "service16k-calyx_updated_auto-576074a0-played.wav"
+        }
+      ],
+      "interruption_time": 11.11111,
+      "interrupted_context": "2e8287fc-1e8a-4125-b145-f3db81b51b25",
+      "old_playback_writes_after_interruption": 0,
+      "timeline_wav": "service16k-timeline.wav",
+      "events_file": "service16k-events.json",
+      "elapsed_seconds": 21.4513
+    },
+    {
+      "test": "service8k",
+      "sample_rate": 8000,
+      "errors": [],
+      "contexts": [
+        {
+          "context_id": "442add51-3128-4d69-9b68-df882da296e2",
+          "label": "native_8k_full_tail",
+          "service_audio_bytes": 35840,
+          "service_duration_seconds": 2.24,
+          "played_audio_bytes": 35840,
+          "played_duration_seconds": 2.24,
+          "service_starts": 1,
+          "service_stops": 1,
+          "playback_stops": 1,
+          "played_prefix_matches_service_pcm": true,
+          "tail_padding_only_silence": true,
+          "wav": "service8k-native_8k_full_tail-442add51.wav",
+          "played_wav": "service8k-native_8k_full_tail-442add51-played.wav"
+        }
+      ],
+      "interruption_time": null,
+      "interrupted_context": null,
+      "old_playback_writes_after_interruption": 0,
+      "timeline_wav": "service8k-timeline.wav",
+      "events_file": "service8k-events.json",
+      "elapsed_seconds": 3.8095
+    }
+  ],
+  "source_sha256": {
+    "tts.py": "213c7fe7f8b98bca5c0d3c709f5858a2a1b09ee6947660b6205f06f43bfb3c78",
+    "__init__.py": "912750d72d9853647ef2997f1cc55d1e610f31dea3f78693802a10e40b35c266",
+    "http.py": "d909b62397cc36f098978f938b4565f603cc275d74408cfe5b8d9863a20648c4",
+    "settings.py": "994fa915dcf210f974277b054d816c7dcdc642ef592e86575474a7368f975d7b",
+    "audio.py": "998fc366c4941e88b57f66d892af88d95e7987125a2b98ec17666caee014794f"
+  },
+  "completed_at": "2026-09-07T10:13:07.436639+00:00"
+}

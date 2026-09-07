@@ -76,6 +76,8 @@ The docs list several untagged settings-error cases; live testing also observed 
 
 P0 means a release blocker such as wrong audio decoding, leaked credentials, stale interrupted speech, deadlock, or lost final samples. P1 means a major usability/reliability failure such as broken recovery or settings changes. P2 means smaller defects or evidence gaps. These are our review priorities, not a new protocol named P0P/P2P.
 
+**Open provider P1:** Calyx/Amit sometimes omits a second Hindi sentence in HTTP output. Raw response PCM and adapter PCM matched byte-for-byte. Native default production checks passed; two Calyx sentence-streamed WS controls also preserved complete Hindi/Malayalam content, without a universal quality guarantee. See [the decisive evidence](evidence/calyx-content-loss.json). No production model changes or silent model substitution were made.
+
 The design addresses known Pipecat failures: [stale audio/context routing](https://github.com/pipecat-ai/pipecat/issues/3986#issuecomment-4128817211), [delayed stop frames](https://github.com/pipecat-ai/pipecat/pull/4639), explicit idempotent lifecycle cleanup, and [zero-audio/context problems](https://github.com/pipecat-ai/pipecat/issues/5305). It does not claim zero possible defects.
 
 - No provider word timestamps exist. Pipecat can associate submitted text with a turn, but this adapter cannot certify the exact last spoken word after interruption. Use heard-audio transcription or an application-level reconciliation policy where exact conversation history matters.
