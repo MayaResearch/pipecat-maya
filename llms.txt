@@ -1,0 +1,43 @@
+# pipecat-maya integration instructions
+
+Source of truth: https://github.com/MayaResearch/pipecat-maya
+Provider contract: https://www.mayaresearch.ai/llm.txt
+Pipecat conventions: https://github.com/pipecat-ai/pipecat/blob/main/COMMUNITY_INTEGRATIONS.md
+
+Install: pip install "pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.1.0"
+Compatibility: Python >=3.11; pipecat-ai==1.8.1. This GitHub release is not a PyPI release.
+
+Minimal integration:
+    import os
+    from pipecat_maya import MayaTTSService
+    tts = MayaTTSService(api_key=os.environ["MAYA_API_KEY"])
+Insert tts after llm and before transport.output() in an existing Pipecat pipeline.
+Feed normal LLMFullResponseStartFrame, LLMTextFrame tokens, LLMFullResponseEndFrame.
+Use TTSSpeakFrame for an entire known utterance. Never send socket frames yourself.
+Use standard Pipecat turn detection and output transport so InterruptionFrame clears playback.
+Only the TTS smoke example needs MAYA_API_KEY; conversational STT/LLM/transport credentials belong to the application's selected providers.
+Run: python examples/speak.py --text 'Hello from Maya.' --language en --output hello.wav
+
+Defaults: model="Maya 2 Native", voice="Ananya", language=None, speed=None.
+Settings: MayaTTSService.Settings(model=..., voice=..., language=..., speed=...).
+Runtime updates: TTSUpdateSettingsFrame(delta=MayaTTSService.Settings(...)).
+Unspecified fields retain their values; None resets language to auto-detect or Native speed to 1.0.
+Calyx example: Settings(model="Maya Calyx", voice="Aarav", speed=None).
+All models/voices/languages are exported as MODELS and LANGUAGES; exact-case validation applies.
+Mixed language: omit language or set None. English code en means Indian English.
+Plain text only, no SSML/HTML/Markdown; preserve natural numbers and dates.
+
+sample_rate is Pipecat output PCM rate; default 24000. Local continuous resampling flushes its tail.
+WebSocket input stays at documented PCM defaults. Never request Native WS mulaw/8k: metadata may misdescribe actual bytes.
+HTTP: from pipecat_maya import MayaHttpTTSService; same settings schema.
+For Calyx HTTP only: provider_sample_rate=8000|16000|24000, encoding="pcm_s16le"|"mulaw".
+HTTP always decodes actual response content-type and yields PCM. Let the carrier serializer encode telephony output.
+
+Cancellation drops local pending audio immediately, sends targeted cancels, and discards stale replies.
+Reconnection never replays an interrupted/uncertain utterance. Start a fresh LLM turn after a failed context.
+Settings updates finish submitted speech and establish a new WS session; prefer between-turn updates.
+Do not retry 400/401. No replay after any HTTP audio body bytes. Bound retries/timeouts.
+No pitch, SSML, seed, manual region, word timestamps, or phoneme API is claimed.
+Observe ErrorFrame and on_pipeline_error, not only HTTP 200/end. Zero audio is failure.
+Support identifiers: WS session_id + context_id; HTTP last_request_id. Never log secrets.
+See README.md, docs/api-coverage.md and docs/validation.md for complete details and evidence.

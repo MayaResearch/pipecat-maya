@@ -1,0 +1,1008 @@
+{
+  "started_at": "2026-09-07T10:06:06.252523+00:00",
+  "scope": "API/settings acceptance and nonzero aligned PCM through MayaHttpTTSService.run_tts",
+  "not_evaluated": [
+    "perceptual language or voice quality",
+    "transport playback",
+    "load capacity"
+  ],
+  "concurrency": 1,
+  "planned_requests": 41,
+  "python": "3.12.14",
+  "pipecat_version": "1.8.1",
+  "package_version": "0.1.0",
+  "source_sha256": {
+    "http.py": "7662086a5ef4954fc2fc66a085304bff241d44339154893722b7932a97880e40",
+    "settings.py": "994fa915dcf210f974277b054d816c7dcdc642ef592e86575474a7368f975d7b",
+    "audio.py": "998fc366c4941e88b57f66d892af88d95e7987125a2b98ec17666caee014794f"
+  },
+  "results": [
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 30,
+      "pcm_bytes": 103680,
+      "pcm_duration_s": 2.16,
+      "time_to_first_pcm_s": 0.8887,
+      "elapsed_s": 1.5574,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 49418,
+      "http_request_id": "a3c8eabd-1b0f-47e0-996c-f6f5a0048749",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Arjun",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 35,
+      "pcm_bytes": 117120,
+      "pcm_duration_s": 2.44,
+      "time_to_first_pcm_s": 0.3023,
+      "elapsed_s": 0.7423,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 51909,
+      "http_request_id": "7565c29f-7cf6-4809-b331-fa46757dd631",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 17,
+      "pcm_bytes": 57948,
+      "pcm_duration_s": 1.2072,
+      "time_to_first_pcm_s": 0.1282,
+      "elapsed_s": 0.4686,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 27576,
+      "http_request_id": "a1b9662f-1c2e-4031-9905-016cbe8f36f1",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Seema",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 32,
+      "pcm_bytes": 105520,
+      "pcm_duration_s": 2.1983,
+      "time_to_first_pcm_s": 0.1225,
+      "elapsed_s": 0.7855,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 48431,
+      "http_request_id": "88a0d646-70db-40bb-a115-659ad217e7a9",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Tripti",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 32,
+      "pcm_bytes": 101738,
+      "pcm_duration_s": 2.1195,
+      "time_to_first_pcm_s": 0.1874,
+      "elapsed_s": 0.7874,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 43992,
+      "http_request_id": "0f82e079-c615-4b38-bf15-98d478f4d76b",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Gargi",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 31,
+      "pcm_bytes": 103612,
+      "pcm_duration_s": 2.1586,
+      "time_to_first_pcm_s": 0.1462,
+      "elapsed_s": 0.7751,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 42740,
+      "http_request_id": "2dd1b66e-cea0-422e-bbff-95bd85e58f4c",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Aarav",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 27,
+      "pcm_bytes": 95164,
+      "pcm_duration_s": 1.9826,
+      "time_to_first_pcm_s": 0.154,
+      "elapsed_s": 0.7565,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 44788,
+      "http_request_id": "521ba018-d737-45b1-ab6c-6319c1430b75",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Zara",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 25,
+      "pcm_bytes": 74774,
+      "pcm_duration_s": 1.5578,
+      "time_to_first_pcm_s": 0.1214,
+      "elapsed_s": 0.5423,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 35100,
+      "http_request_id": "0ee79cc2-f3ec-475a-a952-0aa7738e84a2",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Rahul",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 20,
+      "pcm_bytes": 67200,
+      "pcm_duration_s": 1.4,
+      "time_to_first_pcm_s": 0.1182,
+      "elapsed_s": 0.5494,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 32945,
+      "http_request_id": "5e52e6b6-06cd-4289-b4cf-1a9c436f2b84",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Nila",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 27,
+      "pcm_bytes": 86420,
+      "pcm_duration_s": 1.8004,
+      "time_to_first_pcm_s": 0.1743,
+      "elapsed_s": 0.6377,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 41819,
+      "http_request_id": "5319f181-bde2-4eca-a13b-6958da53185f",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Riley",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 27,
+      "pcm_bytes": 97662,
+      "pcm_duration_s": 2.0346,
+      "time_to_first_pcm_s": 0.1816,
+      "elapsed_s": 1.1047,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 43221,
+      "http_request_id": "88517aa4-f01a-4d8d-8a61-57292500ff28",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Riya",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 30,
+      "pcm_bytes": 89964,
+      "pcm_duration_s": 1.8742,
+      "time_to_first_pcm_s": 0.115,
+      "elapsed_s": 0.6674,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 44207,
+      "http_request_id": "2d51062c-0339-4952-9c2d-9a20efaa438c",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Vikram",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 27,
+      "pcm_bytes": 90230,
+      "pcm_duration_s": 1.8798,
+      "time_to_first_pcm_s": 0.1555,
+      "elapsed_s": 0.6301,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 42603,
+      "http_request_id": "0360b118-dd72-4c51-9ee8-437bbc414db9",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Christine",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 22,
+      "pcm_bytes": 76158,
+      "pcm_duration_s": 1.5866,
+      "time_to_first_pcm_s": 0.1744,
+      "elapsed_s": 0.8556,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 36402,
+      "http_request_id": "a9b8061d-42aa-42a9-95e7-c8b0f6995d5b",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Sagar",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 27,
+      "pcm_bytes": 82460,
+      "pcm_duration_s": 1.7179,
+      "time_to_first_pcm_s": 0.1242,
+      "elapsed_s": 0.5998,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 40212,
+      "http_request_id": "ad296d32-15c3-49a8-a30a-748e85d60f3e",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Rohan",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 17,
+      "pcm_bytes": 59206,
+      "pcm_duration_s": 1.2335,
+      "time_to_first_pcm_s": 0.1171,
+      "elapsed_s": 0.4547,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 29070,
+      "http_request_id": "63559e31-e89b-422e-84b3-5e0b380b922f",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Jackson",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 26,
+      "pcm_bytes": 90702,
+      "pcm_duration_s": 1.8896,
+      "time_to_first_pcm_s": 0.1649,
+      "elapsed_s": 1.0175,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 42453,
+      "http_request_id": "1d2b8582-b314-447b-94fb-9b911b59074e",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Sana",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 33,
+      "pcm_bytes": 104642,
+      "pcm_duration_s": 2.18,
+      "time_to_first_pcm_s": 0.121,
+      "elapsed_s": 0.7228,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 44988,
+      "http_request_id": "c62b8276-3cec-466b-af48-033a783c67cd",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Tarini",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 27,
+      "pcm_bytes": 79178,
+      "pcm_duration_s": 1.6495,
+      "time_to_first_pcm_s": 0.1432,
+      "elapsed_s": 0.6475,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 38320,
+      "http_request_id": "ae387ec3-6e99-4ed0-97ea-e3e13d232651",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Christopher",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 23,
+      "pcm_bytes": 75996,
+      "pcm_duration_s": 1.5833,
+      "time_to_first_pcm_s": 0.1764,
+      "elapsed_s": 0.9399,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 36866,
+      "http_request_id": "df91f9b2-7415-476c-ab88-8d8ffb75225b",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Vance",
+      "language": "en",
+      "coverage": "voice",
+      "input_text": "Hello. Your order is ready.",
+      "ok": true,
+      "audio_frames": 35,
+      "pcm_bytes": 113420,
+      "pcm_duration_s": 2.3629,
+      "time_to_first_pcm_s": 0.1667,
+      "elapsed_s": 1.172,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 54592,
+      "http_request_id": "3a49aad5-df42-4e00-be7a-aea81ec2318e",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "bn",
+      "coverage": "language",
+      "input_text": "নমস্কার। আপনি কেমন আছেন?",
+      "ok": true,
+      "audio_frames": 36,
+      "pcm_bytes": 120000,
+      "pcm_duration_s": 2.5,
+      "time_to_first_pcm_s": 0.7892,
+      "elapsed_s": 1.529,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 56902,
+      "http_request_id": "06cb306a-6084-4d88-86be-168a7dfff63a",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "gu",
+      "coverage": "language",
+      "input_text": "નમસ્તે. તમે કેમ છો?",
+      "ok": true,
+      "audio_frames": 30,
+      "pcm_bytes": 89280,
+      "pcm_duration_s": 1.86,
+      "time_to_first_pcm_s": 0.3202,
+      "elapsed_s": 0.7527,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 43479,
+      "http_request_id": "ab3edfa6-2e42-4eec-bcc8-95108a378155",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "hi",
+      "coverage": "language",
+      "input_text": "नमस्ते। आप कैसे हैं?",
+      "ok": true,
+      "audio_frames": 31,
+      "pcm_bytes": 104640,
+      "pcm_duration_s": 2.18,
+      "time_to_first_pcm_s": 0.3105,
+      "elapsed_s": 0.745,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 48926,
+      "http_request_id": "f3bea3c3-b819-432d-ae55-c189260ed962",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "kn",
+      "coverage": "language",
+      "input_text": "ನಮಸ್ಕಾರ. ನೀವು ಹೇಗಿದ್ದೀರಿ?",
+      "ok": true,
+      "audio_frames": 38,
+      "pcm_bytes": 124800,
+      "pcm_duration_s": 2.6,
+      "time_to_first_pcm_s": 0.3106,
+      "elapsed_s": 0.9094,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 60663,
+      "http_request_id": "fb6fbebb-6b3d-40d3-a929-274e05abc323",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "ml",
+      "coverage": "language",
+      "input_text": "നമസ്കാരം. സുഖമാണോ?",
+      "ok": true,
+      "audio_frames": 26,
+      "pcm_bytes": 89280,
+      "pcm_duration_s": 1.86,
+      "time_to_first_pcm_s": 0.3125,
+      "elapsed_s": 0.5923,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 42842,
+      "http_request_id": "1e47e94c-3d2e-40b5-86ee-d2fe4cda1485",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "mr",
+      "coverage": "language",
+      "input_text": "नमस्कार. तुम्ही कसे आहात?",
+      "ok": true,
+      "audio_frames": 30,
+      "pcm_bytes": 104640,
+      "pcm_duration_s": 2.18,
+      "time_to_first_pcm_s": 0.3089,
+      "elapsed_s": 0.6426,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 49728,
+      "http_request_id": "40633d34-3b74-417d-a122-69891b2b83a3",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "or",
+      "coverage": "language",
+      "input_text": "ନମସ୍କାର। ଆପଣ କେମିତି ଅଛନ୍ତି?",
+      "ok": true,
+      "audio_frames": 33,
+      "pcm_bytes": 113280,
+      "pcm_duration_s": 2.36,
+      "time_to_first_pcm_s": 0.3059,
+      "elapsed_s": 0.6673,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 54982,
+      "http_request_id": "40702ba0-5d81-4d83-ab86-6a4626aabbc3",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "pa",
+      "coverage": "language",
+      "input_text": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ। ਤੁਸੀਂ ਕਿਵੇਂ ਹੋ?",
+      "ok": true,
+      "audio_frames": 36,
+      "pcm_bytes": 115200,
+      "pcm_duration_s": 2.4,
+      "time_to_first_pcm_s": 0.3138,
+      "elapsed_s": 0.7037,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 54561,
+      "http_request_id": "7e37db3e-c0a9-46bf-8eab-d7484c5c0d19",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "ta",
+      "coverage": "language",
+      "input_text": "வணக்கம். நீங்கள் எப்படி இருக்கிறீர்கள்?",
+      "ok": true,
+      "audio_frames": 34,
+      "pcm_bytes": 120960,
+      "pcm_duration_s": 2.52,
+      "time_to_first_pcm_s": 0.3057,
+      "elapsed_s": 0.8853,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 59131,
+      "http_request_id": "506678d0-158c-48f2-ae9e-75380de7008d",
+      "errors": []
+    },
+    {
+      "model": "Maya 2 Native",
+      "voice": "Ananya",
+      "language": "te",
+      "coverage": "language",
+      "input_text": "నమస్కారం. మీరు ఎలా ఉన్నారు?",
+      "ok": true,
+      "audio_frames": 31,
+      "pcm_bytes": 108480,
+      "pcm_duration_s": 2.26,
+      "time_to_first_pcm_s": 0.403,
+      "elapsed_s": 0.7208,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 53200,
+      "http_request_id": "aa0da5e6-2b01-4059-990e-fe2fc4242aac",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "bn",
+      "coverage": "language",
+      "input_text": "নমস্কার। আপনি কেমন আছেন?",
+      "ok": true,
+      "audio_frames": 21,
+      "pcm_bytes": 72100,
+      "pcm_duration_s": 1.5021,
+      "time_to_first_pcm_s": 0.2342,
+      "elapsed_s": 0.5891,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 35049,
+      "http_request_id": "cb7ba31e-2b53-4514-aaef-3275ed030188",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "gu",
+      "coverage": "language",
+      "input_text": "નમસ્તે. તમે કેમ છો?",
+      "ok": true,
+      "audio_frames": 22,
+      "pcm_bytes": 74398,
+      "pcm_duration_s": 1.55,
+      "time_to_first_pcm_s": 0.1343,
+      "elapsed_s": 0.5833,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 30196,
+      "http_request_id": "9a21dc3a-d5a1-4fe9-b4a8-ba08773ec069",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "hi",
+      "coverage": "language",
+      "input_text": "नमस्ते। आप कैसे हैं?",
+      "ok": true,
+      "audio_frames": 6,
+      "pcm_bytes": 19954,
+      "pcm_duration_s": 0.4157,
+      "time_to_first_pcm_s": 0.1932,
+      "elapsed_s": 0.3445,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 8791,
+      "http_request_id": "77ee9c43-1c0c-478e-8209-b61c3bff4f4b",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "kn",
+      "coverage": "language",
+      "input_text": "ನಮಸ್ಕಾರ. ನೀವು ಹೇಗಿದ್ದೀರಿ?",
+      "ok": true,
+      "audio_frames": 9,
+      "pcm_bytes": 26074,
+      "pcm_duration_s": 0.5432,
+      "time_to_first_pcm_s": 0.1551,
+      "elapsed_s": 0.3134,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 11902,
+      "http_request_id": "56d93527-078b-485d-b50c-576a7e2cde78",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "ml",
+      "coverage": "language",
+      "input_text": "നമസ്കാരം. സുഖമാണോ?",
+      "ok": true,
+      "audio_frames": 9,
+      "pcm_bytes": 27624,
+      "pcm_duration_s": 0.5755,
+      "time_to_first_pcm_s": 0.159,
+      "elapsed_s": 0.4926,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 12842,
+      "http_request_id": "370b278c-9f13-4f0a-8b92-b97e5254d7ad",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "mr",
+      "coverage": "language",
+      "input_text": "नमस्कार. तुम्ही कसे आहात?",
+      "ok": true,
+      "audio_frames": 22,
+      "pcm_bytes": 71494,
+      "pcm_duration_s": 1.4895,
+      "time_to_first_pcm_s": 0.2012,
+      "elapsed_s": 0.5857,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 33753,
+      "http_request_id": "d535e086-04f6-45e7-b5eb-0e46b8fa9b34",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "or",
+      "coverage": "language",
+      "input_text": "ନମସ୍କାର। ଆପଣ କେମିତି ଅଛନ୍ତି?",
+      "ok": true,
+      "audio_frames": 32,
+      "pcm_bytes": 109368,
+      "pcm_duration_s": 2.2785,
+      "time_to_first_pcm_s": 0.1311,
+      "elapsed_s": 0.8023,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 53642,
+      "http_request_id": "7a84ecf4-784f-4ec7-8229-d6f9839c39ac",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "pa",
+      "coverage": "language",
+      "input_text": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ। ਤੁਸੀਂ ਕਿਵੇਂ ਹੋ?",
+      "ok": true,
+      "audio_frames": 29,
+      "pcm_bytes": 88484,
+      "pcm_duration_s": 1.8434,
+      "time_to_first_pcm_s": 0.1268,
+      "elapsed_s": 0.6696,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 37291,
+      "http_request_id": "8238877d-f82a-460e-8912-fc11ea735187",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "ta",
+      "coverage": "language",
+      "input_text": "வணக்கம். நீங்கள் எப்படி இருக்கிறீர்கள்?",
+      "ok": true,
+      "audio_frames": 26,
+      "pcm_bytes": 81154,
+      "pcm_duration_s": 1.6907,
+      "time_to_first_pcm_s": 0.1264,
+      "elapsed_s": 0.5994,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 39745,
+      "http_request_id": "2cf937da-7843-45ba-aa13-5cee1a5c2619",
+      "errors": []
+    },
+    {
+      "model": "Maya Calyx",
+      "voice": "Amit",
+      "language": "te",
+      "coverage": "language",
+      "input_text": "నమస్కారం. మీరు ఎలా ఉన్నారు?",
+      "ok": true,
+      "audio_frames": 22,
+      "pcm_bytes": 60996,
+      "pcm_duration_s": 1.2708,
+      "time_to_first_pcm_s": 0.1286,
+      "elapsed_s": 0.4987,
+      "formats": [
+        [
+          24000,
+          1
+        ]
+      ],
+      "each_frame_sample_aligned": true,
+      "context_ids_match": true,
+      "nonzero_samples": 29632,
+      "http_request_id": "de18fcea-09a2-4e33-a46f-17aace39b357",
+      "errors": []
+    }
+  ],
+  "completed_at": "2026-09-07T10:06:36.361872+00:00",
+  "passed": 41,
+  "failed": 0
+}
