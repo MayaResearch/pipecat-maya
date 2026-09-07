@@ -144,7 +144,7 @@ Use HTTP for a known full paragraph via `TTSSpeakFrame(text)`, and WebSocket for
 
 ## Validation and contribution
 
-See [validation evidence](docs/validation.md), [complete API coverage and known limitations](docs/api-coverage.md), and the [integration guide for coding agents](llms.txt). Automated tests use synthetic audio and local protocol servers; live tests use synthetic text against the production Maya endpoint. Production tests are opt-in and never run automatically in CI.
+See [validation evidence](docs/validation.md), [complete API coverage and known limitations](docs/api-coverage.md), and the [integration guide for coding agents](llms.txt). Automated tests use synthetic audio, mocked HTTP responses, and local WebSocket servers; live tests use synthetic text against the production Maya endpoint. Production tests are opt-in and never run automatically in CI.
 
 ```bash
 pip install -e '.[dev]'

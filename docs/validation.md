@@ -8,7 +8,7 @@ Validation date: 2026-09-07. Runtime: Pipecat 1.8.1. Local production and regres
 
 ## Regression and packaging
 
-**110 tests passed**, including actual Pipecat pipelines against local HTTP/WebSocket servers. CI also passed lint, formatting, and wheel/source archive builds on all three Python versions.
+**110 tests passed**, including actual Pipecat pipelines with mocked HTTP responses and local WebSocket servers. Real HTTP behavior was checked separately against the production API. CI also passed lint, formatting, and wheel/source archive builds on all three Python versions.
 
 Coverage includes:
 
