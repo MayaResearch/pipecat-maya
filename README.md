@@ -81,6 +81,28 @@ tts = MayaTTSService(
 
 The 31-voice Calyx catalog follows [Maya's API documentation](https://www.mayaresearch.ai/llm.txt), checked on 2026-09-08. The twelve additions from `Diya` through `Kabir` above are unreleased and are not included in the `v0.1.0` install commands. `SagarM` and `Sagar` are distinct, case-sensitive public voice names; selecting one does not select the other.
 
+### Keeping the catalog current
+
+The table above is a literal, so a voice added after a release is rejected before any request is
+made, and the error names the voice rather than the stale list. Call `refresh_catalog()` once at
+startup to ask the provider what it currently serves:
+
+```python
+from pipecat_maya import refresh_catalog
+
+report = await refresh_catalog(os.environ["MAYA_API_KEY"])
+print(report["Maya Calyx"]["added"])  # names this release does not ship
+```
+
+It updates the exported `MODELS` in place, so validation sees the refreshed catalog. It fails
+safe: if the provider cannot be reached, or answers with anything this cannot parse, the shipped
+catalog is left untouched and the reason is returned in `report[model]["error"]` rather than
+raised — an application that cannot reach the provider still starts with a usable catalog. Pass
+`session=` to reuse an existing `aiohttp.ClientSession`.
+
+The provider documents no catalogue endpoint. This asks for a voice name that cannot exist and
+reads the valid values out of the documented 400 response.
+
 Both models document `hi`, `te`, `bn`, `gu`, `kn`, `ml`, `mr`, `or`, `pa`, `ta`, and `en`. `en` is Indian English; this package does not claim US or British accents. Pipecat `Language` values for these codes are also accepted (`Language.EN_IN` maps to `en`). Model and voice names are case-sensitive, and voices must belong to the selected model. The supported catalog is exported as `MODELS` and `LANGUAGES`.
 
 Leave `language=None` for mixed-language text. An explicit language must match the text's script. Send plain text; Maya does not interpret SSML, HTML, or Markdown. Write numbers, currencies, and dates naturally, and avoid a second client-side normalization pass. These are provider requirements from the [current Maya contract](https://www.mayaresearch.ai/llm.txt), not claims that every language/voice combination has undergone perceptual evaluation here.

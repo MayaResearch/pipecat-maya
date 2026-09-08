@@ -14,6 +14,7 @@ The voice catalog was refreshed against the 2026-09-08 document, which lists 31 
 | Browser query-key fallback | Intentionally not exposed, because this is a server integration | No secret in URL; use a server-side Pipecat bot |
 | Nonempty User-Agent and filtered 403 | Sends `pipecat-maya/0.1.0` from the first request | Deterministic403 surfaces an error; no repeated unchanged retries |
 | Model/voice defaults and exact case | Native/Ananya; all 2 Native and 31 Calyx names validated locally | Complete current roster exported; unsupported names fail before network |
+| Catalogue discovery | No catalogue endpoint is documented; `refresh_catalog()` reads the valid values from the documented 400 for an unknown voice | Opt-in and network-bound; failures leave the shipped catalog untouched and are reported, never raised |
 | Cross-model voice restrictions | Model and voice validated together, including updates | No automatic voice substitution |
 | Eleven language codes | hi,te,bn,gu,kn,ml,mr,or,pa,ta,en plus corresponding Pipecat enums | Catalog acceptance is distinct from perceptual quality |
 | Automatic language/code-switching | `language=None` omits the wire field; updates reconnect WS to clear sticky state | Wrong explicit language can still mispronounce; match script yourself |
