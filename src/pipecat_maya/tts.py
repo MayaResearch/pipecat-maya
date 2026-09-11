@@ -42,6 +42,7 @@ class _Turn:
     websocket: object
     closed: bool = False
     received_audio: bool = False
+    request_ids: list[str] = field(default_factory=list)
     updated_at: float = field(default_factory=time.monotonic)
     done: asyncio.Event = field(default_factory=asyncio.Event)
 
@@ -302,6 +303,13 @@ class MayaTTSService(WebsocketTTSService):
             turn = self._turns[context_id]
             turn.updated_at = time.monotonic()
             if kind == "audio":
+                request_id = message.get("request_id")
+                if isinstance(request_id, str) and request_id not in turn.request_ids:
+                    turn.request_ids.append(request_id)
+                    logger.debug(
+                        f"Maya request_id={request_id}, context_id={context_id}, "
+                        f"session_id={self._session_id}"
+                    )
                 try:
                     data = base64.b64decode(message["audio"], validate=True)
                     audio = turn.stream.feed(data)
@@ -319,6 +327,13 @@ class MayaTTSService(WebsocketTTSService):
                         TTSAudioRawFrame(audio, self.sample_rate, 1, context_id=context_id),
                     )
             elif kind == "end":
+                reported = message.get("request_ids")
+                request_ids = reported if isinstance(reported, list) else turn.request_ids
+                logger.debug(
+                    f"Maya turn complete context_id={context_id}, "
+                    f"session_id={message.get('session_id') or self._session_id}, "
+                    f"request_ids={request_ids}"
+                )
                 await self._finish(context_id, successful=True)
             elif kind == "cancelled":
                 await self._finish(context_id, successful=False)
