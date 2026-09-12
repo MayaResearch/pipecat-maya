@@ -29,6 +29,18 @@ MODELS = {
         "Tarini",
         "Christopher",
         "Vance",
+        "Diya",
+        "SagarM",
+        "Samar",
+        "Shailika",
+        "Shreeraj",
+        "Vikas",
+        "Arushi",
+        "Kavita",
+        "Neeraj",
+        "Neha",
+        "Rehan",
+        "Kabir",
     ),
 }
 LANGUAGES = frozenset({"hi", "te", "bn", "gu", "kn", "ml", "mr", "or", "pa", "ta", "en"})

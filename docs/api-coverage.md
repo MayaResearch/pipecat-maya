@@ -2,6 +2,8 @@
 
 Reviewed against the complete [Maya `llm.txt`](https://www.mayaresearch.ai/llm.txt), fetched 2026-09-07, and [Pipecat's current community integration guide](https://github.com/pipecat-ai/pipecat/blob/main/COMMUNITY_INTEGRATIONS.md). The provider document defines the public contract; the implementation is tested against Pipecat 1.8.1. This matrix records every functional topic in that document, including deliberate omissions, so an unsupported feature is not silently implied.
 
+The voice catalog was refreshed against the 2026-09-08 document, which lists 31 Calyx voices. This catalog update does not extend the historical production validation in [validation.md](validation.md) to the newly added voices.
+
 ## Contract coverage
 
 | Provider topic | Integration behavior | Verification or boundary |
@@ -11,7 +13,7 @@ Reviewed against the complete [Maya `llm.txt`](https://www.mayaresearch.ai/llm.t
 | Bearer authentication | Server-only Authorization header on both transports | Local header assertions; live authenticated requests |
 | Browser query-key fallback | Intentionally not exposed, because this is a server integration | No secret in URL; use a server-side Pipecat bot |
 | Nonempty User-Agent and filtered 403 | Sends `pipecat-maya/0.1.0` from the first request | Deterministic403 surfaces an error; no repeated unchanged retries |
-| Model/voice defaults and exact case | Native/Ananya; all 2 Native and 19 Calyx names validated | Complete current roster exported; unsupported names fail before network |
+| Model/voice defaults and exact case | Native/Ananya; all 2 Native and 31 Calyx names validated locally | Complete current roster exported; unsupported names fail before network |
 | Cross-model voice restrictions | Model and voice validated together, including updates | No automatic voice substitution |
 | Eleven language codes | hi,te,bn,gu,kn,ml,mr,or,pa,ta,en plus corresponding Pipecat enums | Catalog acceptance is distinct from perceptual quality |
 | Automatic language/code-switching | `language=None` omits the wire field; updates reconnect WS to clear sticky state | Wrong explicit language can still mispronounce; match script yourself |
@@ -66,7 +68,7 @@ Reviewed against the complete [Maya `llm.txt`](https://www.mayaresearch.ai/llm.t
 
 The [earlier core PR](https://github.com/pipecat-ai/pipecat/pull/5222) was closed with an explicit [request for a community package and documentation PR](https://github.com/pipecat-ai/pipecat/pull/5222#issuecomment-5186553125). Its installation instruction does not describe a released core extra. Install this versioned package instead.
 
-The provider document mixes generic two-voice language with the detailed 19-voice Calyx roster, and generic concurrency-cap advice with its current no-cap section. The scoped model/rate-limit sections take precedence. Its description of playing8k audio as24k reverses the speed direction: that mismatch plays three times faster. The adapter uses the actual format rather than repeating the prose assumption.
+The provider document mixes generic two-voice language with the detailed Calyx roster, and generic concurrency-cap advice with its current no-cap section. The scoped model/rate-limit sections take precedence. Its description of playing8k audio as24k reverses the speed direction: that mismatch plays three times faster. The adapter uses the actual format rather than repeating the prose assumption.
 
 Live production testing found **Native WS `sample_rate=8000, encoding=mulaw` can echo those values in metadata while returning PCM24k bytes**. The same sentence independently transcribed correctly when decoded as PCM24k. Those Native overrides are unsupported in the documented contract; this package never sends them. Calyx HTTP format options are supported and decoded from the response headers. Calyx WS format overrides are deliberately not exposed because the WS-specific contract documents PCM defaults; output resampling remains available.
 

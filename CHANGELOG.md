@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Sync the Calyx voice catalog with [Maya's API documentation](https://www.mayaresearch.ai/llm.txt) checked on 2026-09-08, adding Diya, SagarM, Samar, Shailika, Shreeraj, Vikas, Arushi, Kavita, Neeraj, Neha, Rehan, and Kabir. Calyx now accepts 31 case-sensitive voice names; SagarM remains distinct from Sagar.
+
 ## 0.1.0
 
 - Add persistent WebSocket v2 Maya TTS with per-turn contexts, sentence streaming, interruption, metadata readiness, bounded reconnect, and runtime settings.

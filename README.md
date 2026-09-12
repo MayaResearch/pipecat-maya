@@ -77,7 +77,9 @@ tts = MayaTTSService(
 | Model | Voices |
 | --- | --- |
 | `Maya 2 Native` | Ananya, Arjun |
-| `Maya Calyx` | Amit, Seema, Tripti, Gargi, Aarav, Zara, Rahul, Nila, Riley, Riya, Vikram, Christine, Sagar, Rohan, Jackson, Sana, Tarini, Christopher, Vance |
+| `Maya Calyx` | Amit, Seema, Tripti, Gargi, Aarav, Zara, Rahul, Nila, Riley, Riya, Vikram, Christine, Sagar, Rohan, Jackson, Sana, Tarini, Christopher, Vance, Diya, SagarM, Samar, Shailika, Shreeraj, Vikas, Arushi, Kavita, Neeraj, Neha, Rehan, Kabir |
+
+The 31-voice Calyx catalog follows [Maya's API documentation](https://www.mayaresearch.ai/llm.txt), checked on 2026-09-08. The twelve additions from `Diya` through `Kabir` above are unreleased and are not included in the `v0.1.0` install commands. `SagarM` and `Sagar` are distinct, case-sensitive public voice names; selecting one does not select the other.
 
 Both models document `hi`, `te`, `bn`, `gu`, `kn`, `ml`, `mr`, `or`, `pa`, `ta`, and `en`. `en` is Indian English; this package does not claim US or British accents. Pipecat `Language` values for these codes are also accepted (`Language.EN_IN` maps to `en`). Model and voice names are case-sensitive, and voices must belong to the selected model. The supported catalog is exported as `MODELS` and `LANGUAGES`.
 
