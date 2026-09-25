@@ -138,7 +138,7 @@ async def test_token_chunks_share_one_turn_and_preserve_audio():
     assert len([m for m in sent if not m["continue"]]) == 2
     assert server.connections == 1
     assert server.headers[0]["Authorization"] == "Bearer test-key"
-    assert server.headers[0]["User-Agent"] == "pipecat-maya/0.1.0"
+    assert server.headers[0]["User-Agent"] == "pipecat-maya/0.2.0"
     assert tts.session_id == "test-session"
     assert b"".join(f.audio for f in output if isinstance(f, TTSAudioRawFrame)) == PCM * 3
     assert len([f for f in output if isinstance(f, TTSStoppedFrame)]) == 2

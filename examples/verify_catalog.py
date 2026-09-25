@@ -80,7 +80,7 @@ async def main():
         },
         "results": [],
     }
-    assert report["pipecat_version"] == "1.8.1"
+    assert report["pipecat_version"] == "1.11.0"
     persist(report)
     async with aiohttp.ClientSession() as session:
         for model, voice, language, scope in rows:

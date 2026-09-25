@@ -4,8 +4,8 @@ Source of truth: https://github.com/MayaResearch/pipecat-maya
 Provider contract: https://www.mayaresearch.ai/llm.txt
 Pipecat conventions: https://github.com/pipecat-ai/pipecat/blob/main/COMMUNITY_INTEGRATIONS.md
 
-Install: pip install "pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.1.0"
-Compatibility: Python >=3.11; pipecat-ai==1.8.1. This GitHub release is not a PyPI release.
+Install: pip install "pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.2.0"
+Compatibility: Python >=3.11; pipecat-ai==1.11.0. This GitHub release is not a PyPI release.
 
 Minimal integration:
     import os

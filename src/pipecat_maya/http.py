@@ -325,7 +325,7 @@ class MayaHttpTTSService(TTSService):
         headers = {
             "Authorization": f"Bearer {self._api_key}",
             "Content-Type": "application/json",
-            "User-Agent": "pipecat-maya/0.1.0",
+            "User-Agent": "pipecat-maya/0.2.0",
         }
         received_audio = False
         emitted_audio = False
