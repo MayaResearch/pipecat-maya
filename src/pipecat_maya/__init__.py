@@ -5,4 +5,4 @@ from .settings import LANGUAGES, MODELS, MayaTTSSettings
 from .tts import MayaTTSService
 
 __all__ = ["MayaTTSService", "MayaHttpTTSService", "MayaTTSSettings", "MODELS", "LANGUAGES"]
-__version__ = "0.1.0"
+__version__ = "0.2.0"

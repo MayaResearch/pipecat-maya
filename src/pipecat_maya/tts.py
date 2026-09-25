@@ -161,7 +161,7 @@ class MayaTTSService(WebsocketTTSService):
             ws = await self._websocket_connect(
                 self._url,
                 additional_headers={"Authorization": f"Bearer {self._api_key}"},
-                user_agent_header="pipecat-maya/0.1.0",
+                user_agent_header="pipecat-maya/0.2.0",
                 open_timeout=self._connect_timeout,
                 ping_interval=20,
                 ping_timeout=20,

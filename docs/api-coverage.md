@@ -84,5 +84,5 @@ The design addresses known Pipecat failures: [stale audio/context routing](https
 - Complete catalogs are API acceptance checks, not an independent MOS/pronunciation evaluation of every voice-language combination. Synthesized test speech is distinguished from consented customer call audio.
 - The playback demonstration uses synthetic input events and a real Pipecat paced output transport. It is not proof of a physical microphone, browser device, or phone carrier route.
 - Production tests measure one client/network and bounded concurrency. They are not an SLA, capacity benchmark, or a soak test.
-- The package pins Pipecat 1.8.1. Newer releases need compatibility checks before widening the dependency.
+- v0.2.0 pins Pipecat 1.11.0, with fresh local regression coverage recorded in [validation.md](validation.md). The original API audit and live-provider evidence above used 1.8.1; those historical checks are not new 1.11.0 live tests. Future releases need compatibility checks before changing the dependency.
 - GitHub installation is available for this release. A PyPI publication and Pipecat's upstream listing approval are separate states.

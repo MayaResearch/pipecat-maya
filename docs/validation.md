@@ -1,5 +1,20 @@
 # Validation evidence
 
+## v0.2.0 compatibility update — 2026-09-25
+
+Pipecat **1.11.0**, pipecat-maya **0.2.0**, Python **3.12** on macOS arm64:
+**112 tests passed**, plus Ruff lint/format checks and wheel/source distribution builds.
+Tests exercise actual Pipecat frame pipelines with local protocol servers or mocked HTTP
+responses, including interruptions, stale audio, socket reuse, failure handling and resampling.
+Two additional tests check installed package and framework version metadata.
+
+This is a framework compatibility release. No new production Maya API calls, microphone
+tests or human listening were performed. The live recordings and provider findings below
+are historical **v0.1.0 / Pipecat 1.8.1** evidence, not a new live-audio certification.
+The old release is unchanged for applications staying on 1.8.1.
+
+## Historical v0.1.0 validation — 2026-09-07
+
 **The adapter passes its regression and production pipeline checks. One provider content defect remains open:** Calyx/Amit sometimes omits the second sentence of a Hindi HTTP request. This release does not certify every voice-language combination for production use.
 
 Validation date: 2026-09-07. Runtime: Pipecat 1.8.1. Local production and regression checks used Python 3.12 on macOS arm64. [GitHub Actions passed on Python 3.11, 3.12, and 3.13 on Linux](https://github.com/MayaResearch/pipecat-maya/actions/runs/34110227938).

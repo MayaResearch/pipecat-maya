@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pipecat-maya"
-version = "0.1.0"
+version = "0.2.0"
 description = "Maya Research streaming text-to-speech services for Pipecat"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "BSD-2-Clause"
 license-files = ["LICENSE"]
 authors = [{name = "Maya Research"}]
-dependencies = ["pipecat-ai==1.8.1", "websockets>=13.1,<18", "aiohttp>=3.11.12,<4", "numpy>=1.26.4,<3", "soxr~=1.0.0"]
+dependencies = ["pipecat-ai==1.11.0", "websockets>=13.1,<18", "aiohttp>=3.11.12,<4", "numpy>=1.26.4,<3", "soxr~=1.0.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.4,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.12", "build>=1.2"]

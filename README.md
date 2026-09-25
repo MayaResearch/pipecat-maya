@@ -2,18 +2,23 @@
 
 Stream Maya Research speech in a Pipecat pipeline with one API key. The service handles sentence aggregation, connection reuse, turn completion, interruption, PCM decoding, and sample-rate conversion.
 
-This is a **community-maintained integration by Maya Research**, the company providing the API. Pipecat does not maintain or validate this package. Built for and tested with **Pipecat 1.8.1**, pinned explicitly until additional versions are verified. Python 3.11 or newer.
+This is a **community-maintained integration by Maya Research**, the company providing the API. Pipecat does not maintain or validate this package. Built for and tested with **Pipecat 1.11.0**, pinned explicitly until additional versions are verified. Python 3.11 or newer.
 
 **Known provider limitation:** some Calyx/Amit HTTP outputs omitted a second sentence. A same-request byte comparison proved the omission was already present in the provider response. The default Native route passed the production pipeline checks. Review [the evidence and deployment limits](docs/validation.md) before selecting Calyx for a use case.
 
 ## Install
 
+Migrating from Pipecat 1.8.1? Use **pipecat-maya v0.2.0** for **Pipecat 1.11.0**.
+The existing v0.1.0 release stays pinned to 1.8.1. Upgrade in your application's
+own dependency environment and regenerate its lockfile; do not replace it with
+a cookbook lockfile. This is a runtime compatibility update, not a model change.
+
 ```bash
-pip install "pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.1.0"
+pip install "pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.2.0"
 export MAYA_API_KEY="your-key"
 ```
 
-Or use `uv add "pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.1.0"`.
+Or use `uv add "pipecat-maya @ git+https://github.com/MayaResearch/pipecat-maya.git@v0.2.0"`.
 This release installs from GitHub; it is not published on PyPI. Keys are issued through the contacts in [Maya's API documentation](https://www.mayaresearch.ai/llm.txt). Keep the key on your server.
 
 ## Add to your voice agent
@@ -43,7 +48,7 @@ pipeline = Pipeline(
 )
 ```
 
-Here `transport`, `stt`, `llm`, and `context_aggregator` are your application's existing components. See [Pipecat's foundational examples](https://github.com/pipecat-ai/pipecat/tree/v1.8.1/examples/voice) for complete conversational bots. Pipecat sends LLM response start/text/end frames and broadcasts `InterruptionFrame` when the user interrupts. Use its normal transport and turn-management path so buffered playback is discarded immediately.
+Here `transport`, `stt`, `llm`, and `context_aggregator` are your application's existing components. See [Pipecat's foundational examples](https://github.com/pipecat-ai/pipecat/tree/v1.11.0/examples/voice) for complete conversational bots. Pipecat sends LLM response start/text/end frames and broadcasts `InterruptionFrame` when the user interrupts. Use its normal transport and turn-management path so buffered playback is discarded immediately.
 
 **Do not split tokens, parse Base64, send flush messages, or manage sockets yourself.** Feed standard Pipecat LLM frames. The adapter aggregates sentences, sends them without waiting for audio, reuses one Maya context for the whole response, and closes it exactly once. Text without final punctuation is flushed at response end. Empty responses do not open a turn.
 
@@ -52,7 +57,7 @@ Here `transport`, `stt`, `llm`, and `context_aggregator` are your application's 
 ```bash
 git clone https://github.com/MayaResearch/pipecat-maya.git
 cd pipecat-maya
-git checkout v0.1.0
+git checkout v0.2.0
 pip install .
 python examples/speak.py --text 'नमस्ते! आपका ऑर्डर कल पहुँच जाएगा।' --output greeting.wav
 ```
