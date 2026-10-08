@@ -11,7 +11,7 @@ requires-python = ">=3.11"
 license = "BSD-2-Clause"
 license-files = ["LICENSE"]
 authors = [{name = "Maya Research"}]
-dependencies = ["pipecat-ai==1.11.0", "websockets>=13.1,<18", "aiohttp>=3.11.12,<4", "numpy>=1.26.4,<3", "soxr~=1.0.0"]
+dependencies = ["pipecat-ai>=1.11,<1.12", "websockets>=13.1,<18", "aiohttp>=3.11.12,<4", "numpy>=1.26.4,<3", "soxr~=1.0.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.4,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.12", "build>=1.2"]
