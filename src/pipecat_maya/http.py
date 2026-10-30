@@ -64,11 +64,12 @@ class MayaHttpTTSService(TTSService):
 
     Settings = MayaTTSSettings
     _settings: MayaTTSSettings
+    _requires_api_key = True
 
     def __init__(
         self,
         *,
-        api_key: str,
+        api_key: str | None,
         aiohttp_session: aiohttp.ClientSession | None = None,
         url: str = MAYA_HTTP_URL,
         sample_rate: int = 24000,
@@ -95,7 +96,9 @@ class MayaHttpTTSService(TTSService):
             retry_delay: Initial exponential backoff delay, between 0 and 30 seconds.
             **kwargs: Additional Pipecat TTSService arguments, including aggregation mode.
         """
-        if not isinstance(api_key, str) or not api_key.strip():
+        if (api_key is None and self._requires_api_key) or (
+            api_key is not None and (not isinstance(api_key, str) or not api_key.strip())
+        ):
             raise ValueError("api_key must be a nonempty string")
         if isinstance(sample_rate, bool) or not isinstance(sample_rate, int) or sample_rate <= 0:
             raise ValueError("sample_rate must be a positive integer")
@@ -117,7 +120,7 @@ class MayaHttpTTSService(TTSService):
 
         self._provider_sample_rate = provider_sample_rate
         self._encoding = encoding
-        initial_settings = default_settings(settings)
+        initial_settings = self._initial_settings(settings)
         self._validate_format_settings(initial_settings)
         super().__init__(
             sample_rate=sample_rate,
@@ -152,6 +155,30 @@ class MayaHttpTTSService(TTSService):
         """Resolve a language to its documented Maya API code."""
         return service_language(language)
 
+    def _initial_settings(self, settings):
+        return default_settings(settings)
+
+    def _validated_settings(self, settings):
+        return validated_settings(settings)
+
+    def _request_body(self, text: str) -> dict:
+        payload = {"text": text, **request_settings(self._settings)}
+        if self._settings.model == "Maya Calyx":
+            payload["encoding"] = self._encoding
+            if self._provider_sample_rate is not None:
+                payload["sample_rate"] = self._provider_sample_rate
+        return payload
+
+    def _request_headers(self) -> dict:
+        return {
+            "Authorization": f"Bearer {self._api_key}",
+            "Content-Type": "application/json",
+            "User-Agent": "pipecat-maya/0.2.0",
+        }
+
+    def _response_audio_format(self, response) -> tuple[int, str]:
+        return _audio_format(response.headers.get("Content-Type", ""))
+
     def _validate_format_settings(self, settings: MayaTTSSettings) -> None:
         if self._encoding not in ("pcm_s16le", "mulaw"):
             raise ValueError("encoding must be pcm_s16le or mulaw")
@@ -170,7 +197,7 @@ class MayaHttpTTSService(TTSService):
         """Validate the merged configuration before changing the current settings."""
         candidate = copy.deepcopy(self._settings)
         candidate.apply_update(delta)
-        candidate = validated_settings(candidate)
+        candidate = self._validated_settings(candidate)
         self._validate_format_settings(candidate)
         if candidate != self._settings:
             await self._flush_pending_text()
@@ -278,7 +305,7 @@ class MayaHttpTTSService(TTSService):
     def _safe_error(self, message: str) -> str:
         suffix = f" (request_id={self._last_request_id})" if self._last_request_id else ""
         result = f"Maya HTTP TTS: {message[:1024]}{suffix}"
-        return result.replace(self._api_key, "[redacted]")
+        return result.replace(self._api_key, "[redacted]") if self._api_key else result
 
     async def _response_error(self, response: aiohttp.ClientResponse) -> str:
         try:
@@ -317,16 +344,8 @@ class MayaHttpTTSService(TTSService):
         if not isinstance(text, str) or not text.strip():
             yield ErrorFrame(error="Maya HTTP TTS requires nonempty plain text")
             return
-        payload = {"text": text, **request_settings(self._settings)}
-        if self._settings.model == "Maya Calyx":
-            payload["encoding"] = self._encoding
-            if self._provider_sample_rate is not None:
-                payload["sample_rate"] = self._provider_sample_rate
-        headers = {
-            "Authorization": f"Bearer {self._api_key}",
-            "Content-Type": "application/json",
-            "User-Agent": "pipecat-maya/0.2.0",
-        }
+        payload = self._request_body(text)
+        headers = self._request_headers()
         received_audio = False
         emitted_audio = False
         self._last_request_id = None
@@ -359,7 +378,7 @@ class MayaHttpTTSService(TTSService):
                                 yield ErrorFrame(error=error_message)
                                 return
                         else:
-                            rate, encoding = _audio_format(response.headers.get("Content-Type", ""))
+                            rate, encoding = self._response_audio_format(response)
                             stream = PCMStream(rate, self.sample_rate)
                             await self.start_tts_usage_metrics(text)
                             async for chunk in response.content.iter_chunked(4096):

@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Add `MayaNativeTTSService` for the self-hosted Maya 2 Native HTTP server, with
+  named/custom voices, explicit language and normalization settings, optional
+  proxy authentication, and local output-rate conversion.
+- Add `examples/speak.py --native-url` and keyless contract/pipeline tests.
+  Hosted API defaults and the existing `v0.2.0` release remain unchanged.
+
 ## 0.2.0
 
 - Target Pipecat 1.11.0 instead of 1.8.1. Install this release when migrating your application to 1.11.0; v0.1.0 remains available for the previous pinned runtime.
