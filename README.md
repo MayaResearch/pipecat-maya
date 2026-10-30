@@ -4,6 +4,11 @@ Stream Maya Research speech in a Pipecat pipeline with one API key. The service 
 
 This is a **community-maintained integration by Maya Research**, the company providing the API. Pipecat does not maintain or validate this package. Built for and tested with **Pipecat 1.11.0**, pinned explicitly until additional versions are verified. Python 3.11 or newer.
 
+**Self-hosting the open weights?** The proposed `MayaNativeTTSService` connects
+Pipecat to your own Maya 2 Native server without a hosted API key. See the
+[self-hosted setup and runnable WAV example](docs/self-hosted-native.md).
+It uses a separate server contract and is not included in the `v0.2.0` tag.
+
 **Known provider limitation:** some Calyx/Amit HTTP outputs omitted a second sentence. A same-request byte comparison proved the omission was already present in the provider response. The default Native route passed the production pipeline checks. Review [the evidence and deployment limits](docs/validation.md) before selecting Calyx for a use case.
 
 ## Install

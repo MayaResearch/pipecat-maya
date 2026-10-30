@@ -16,7 +16,7 @@ from pipecat.pipeline.worker import PipelineParams, PipelineWorker
 from pipecat.processors.frame_processor import FrameDirection, FrameProcessor
 from pipecat.workers.runner import WorkerRunner
 
-from pipecat_maya import MayaHttpTTSService, MayaTTSService
+from pipecat_maya import MayaHttpTTSService, MayaNativeTTSService, MayaTTSService
 
 
 class WaveOutput(FrameProcessor):
@@ -48,14 +48,27 @@ class WaveOutput(FrameProcessor):
 
 
 async def main(args):
-    service = MayaHttpTTSService if args.http else MayaTTSService
-    tts = service(
-        api_key=os.environ["MAYA_API_KEY"],
-        sample_rate=args.sample_rate,
-        settings=service.Settings(
-            model=args.model, voice=args.voice, language=args.language, speed=args.speed
-        ),
-    )
+    if args.native_url:
+        tts = MayaNativeTTSService(
+            base_url=args.native_url,
+            sample_rate=args.sample_rate,
+            settings=MayaNativeTTSService.Settings(
+                voice=args.voice or "Ahana",
+                language=args.language,
+            ),
+        )
+    else:
+        service = MayaHttpTTSService if args.http else MayaTTSService
+        tts = service(
+            api_key=os.environ["MAYA_API_KEY"],
+            sample_rate=args.sample_rate,
+            settings=service.Settings(
+                model=args.model or "Maya 2 Native",
+                voice=args.voice or "Ananya",
+                language=args.language,
+                speed=args.speed,
+            ),
+        )
     output = WaveOutput(args.output)
     worker = PipelineWorker(
         Pipeline([tts, output]),
@@ -85,11 +98,20 @@ async def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--text", default="नमस्ते! आपका ऑर्डर कल पहुँच जाएगा।")
-    parser.add_argument("--model", default="Maya 2 Native")
-    parser.add_argument("--voice", default="Ananya")
+    parser.add_argument("--model", default=None, help="Hosted model (default: Maya 2 Native)")
+    parser.add_argument("--voice", default=None, help="Default: Ananya hosted; Ahana self-hosted")
     parser.add_argument("--language", default=None)
     parser.add_argument("--speed", type=float, default=None)
     parser.add_argument("--sample-rate", type=int, default=24000)
-    parser.add_argument("--http", action="store_true")
+    route = parser.add_mutually_exclusive_group()
+    route.add_argument("--http", action="store_true")
+    route.add_argument(
+        "--native-url", help="Self-hosted maya3.server root, e.g. http://127.0.0.1:8080"
+    )
     parser.add_argument("--output", type=Path, default=Path("output.wav"))
-    asyncio.run(main(parser.parse_args()))
+    args = parser.parse_args()
+    if args.native_url and (args.model is not None or args.speed is not None):
+        parser.error("--model and --speed are hosted-only options")
+    if args.output.exists():
+        parser.error("--output already exists; choose a new file")
+    asyncio.run(main(args))
